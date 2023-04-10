@@ -7,3 +7,9 @@ export interface charactersStateType {
   data: Array<characterType>;
   error: any;
 }
+
+export interface SingleCharacterType {
+  character: {
+    name: string;
+  };
+}

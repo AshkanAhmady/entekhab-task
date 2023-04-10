@@ -1,33 +1,6 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
+import { createSlice } from "@reduxjs/toolkit";
 import { charactersStateType } from "../../types";
-
-export const fetchCharacters = createAsyncThunk(
-  "characters/fetchCharacters",
-  async (payload, { rejectWithValue }) => {
-    try {
-      const { data } = await axios({
-        url: "https://rickandmortyapi.com/graphql",
-        method: "post",
-        data: {
-          query: `
-          query {
-            characters(page: 1) {
-              results {
-                name
-              }
-            }
-          }
-            `,
-        },
-      });
-      return data.data.characters.results;
-    } catch (error: any) {
-      console.log("error", error);
-      return rejectWithValue(error.message);
-    }
-  }
-);
+import { fetchCharacters } from "./actions";
 
 const initialState: charactersStateType = {
   loading: false,
