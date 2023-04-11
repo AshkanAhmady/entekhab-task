@@ -19,14 +19,14 @@ Your app is ready to be deployed!
 
 
 ## librarys
-(axios): to send requests and get data
-(redux & reduxToolkit): statemanagment to managing global states and control async requests
-(materialUI): to design ui and use uiComponents to code cleaner and faster
-(typescript): to More efficient and simple coding and with fewer bugs
+(axios): to send requests and get data.\
+(redux & reduxToolkit): statemanagment to managing global states and control async requests.\
+(materialUI): to design ui and use uiComponents to code cleaner and faster.\
+(typescript): to More efficient and simple coding and with fewer bugs.\
 
 ## folders
-(Components): reusable components that used in app
-(constants): define base_url, config the axios and define requestHandler to handle the all requests
-(hooks): reusable methods that is necessary in app
-(Redux): all about globalStates and async requests
-*and the (types) file have interfaces that description type of variables*
+(Components): reusable components that used in app.\
+(constants): define base_url, config the axios and define requestHandler to handle the all requests.\
+(hooks): reusable methods that is necessary in app.\
+(Redux): all about globalStates and async requests.\
+*and the (types) file have interfaces that description type of variables*.\
