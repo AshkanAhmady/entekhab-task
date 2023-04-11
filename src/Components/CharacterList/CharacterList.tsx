@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { useAppDispatch, useAppSelector } from "../hooks/toolkitHooks";
-import { fetchCharacters } from "../Redux/characters/actions";
+import { useAppDispatch, useAppSelector } from "../../hooks/toolkitHooks";
+import { fetchCharacters } from "../../Redux/characters/actions";
 import { Button } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { Box } from "@mui/system";
 import CircularProgress from "@mui/material/CircularProgress";
-import SingleCharacter from "./SingleCharacter";
+import SingleCharacter from "../SingleCharacter/SingleCharacter";
+import { mapBoxStyles, paginationStyles } from "./styles";
 
 const CharacterList = () => {
     const dispatch = useAppDispatch()
@@ -20,21 +21,12 @@ const CharacterList = () => {
     if (error) return <p>{error}</p>;
     return (
         <>
-            <Box sx={{
-                background: "#fff",
-                padding: "20px",
-                width: "450px",
-                borderRadius: "10px",
-                boxShadow: "0 0 15px 2px #eee",
-                display: "flex",
-                flexWrap: "wrap",
-                gap: "10px"
-            }}>
+            <Box sx={mapBoxStyles}>
                 {data.map((character, index) => {
                     return <SingleCharacter key={index} character={character} />
                 })}
             </Box>
-            <Box sx={{ display: "flex", marginTop: '1rem', gap: "5px" }}>
+            <Box sx={paginationStyles}>
                 <Button disabled={page === 1} onClick={() => setPage(page - 1)} variant="contained">Prev</Button>
                 <Typography variant="h5">
                     {page}

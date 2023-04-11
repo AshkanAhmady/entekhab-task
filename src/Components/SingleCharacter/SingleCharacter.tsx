@@ -1,15 +1,11 @@
 import { FC } from 'react';
-import { SingleCharacterType } from '../types';
+import { SingleCharacterType } from '../../types';
 import { Box } from "@mui/system";
+import { singleCharacterStyles } from './styles';
 
 const SingleCharacter: FC<SingleCharacterType> = ({ character }) => {
     return (
-        <Box sx={{
-            borderRadius: "3px",
-            fontWeight: "600",
-            padding: "5px",
-            background: "#eee"
-        }}>
+        <Box sx={singleCharacterStyles}>
             {character.name}
         </Box>
     );

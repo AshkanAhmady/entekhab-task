@@ -1,5 +1,5 @@
 import { Box } from "@mui/system";
-import CharacterList from './Components/CharacterList';
+import CharacterList from './Components/CharacterList/CharacterList';
 
 const appStyles = {
   display: 'flex',
